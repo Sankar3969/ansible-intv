@@ -2,5 +2,7 @@
   hosts: web
   tasks:
   - name: default value check
+    vars:
+      course1: 
     debug:
-      msg: " {{course1 }} | default('Ansible')"
+      msg: " {{ course1  | default('Ansible') }}"
