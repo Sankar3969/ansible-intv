@@ -1,10 +1,10 @@
 - name: this isfor testing condition 
   hosts: web
   vars:
-    number1: 100
-  vars_prompt:
-  - name: my_number
-    prompt: please enter the number
+    my_number: 100
+  # vars_prompt:
+  # - name: my_number
+  #   prompt: please enter the number
   tasks:
   - name: check the condition wheteher number is less than 10
     ansible.builtin.debug:
@@ -14,7 +14,7 @@
     ansible.builtin.debug:
       msg: " the number {{my_number}} is greater than 10 "
     when: my_number | int > 10
-  - name: check the condition wheteher number is less than 10
-    ansible.builtin.debug:
-      msg: " the number {{number1}} is  equal to 10 "
-    when: number1 = 10
+  # - name: check the condition wheteher number is equal to 100
+  #   ansible.builtin.debug:
+  #     msg: " the number {{number1}} is  equal to 10 "
+  #   when: number1 = 10
