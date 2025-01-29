@@ -16,5 +16,5 @@
     when: my_number | int > 10
   - name: check the condition wheteher number is less than 10
     ansible.builtin.debug:
-      msg: " the number {{number1}} is  equal to 100 "
-    when: number1 | int = 10
+      msg: " the number {{number1}} is  equal to 10 "
+    when: number1 = 10
