@@ -23,7 +23,7 @@
       - {key: ansible, value: config mgmt}
       - {key: terraform, value: auto}
     debug:
-      msg: " The items:: {{tools | dict2items}} and {{tools | items2dict}}"
+      msg: " The items:: {{tools | dict2items}} and {{courses | items2dict}}"
       
 
   
