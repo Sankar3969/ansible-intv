@@ -1,0 +1,14 @@
+- name: prompt variables
+  hosts: web
+  vars_prompt: 
+  - name: course
+    prompt: please enter the cource details
+    private: false
+  - name: duration
+    prompt: please enter duration
+  - name: trainer
+    prompt: please enter the trainer
+  tasks:
+  - name: print val from prompt
+    ansible.builtin.msg:
+      msg: " the course is {{course}},{{duration}} and {{trainer}} " 
