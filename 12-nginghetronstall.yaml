@@ -1,0 +1,17 @@
+- name: nginx installation  
+  hosts: web 
+  tasks:  
+  - name: gathering facts
+    debug:
+      msg: " facts are: {{ansible_facts}}"
+  
+  - name: nginx installation in redhat
+    ansible.builtin.dnf:
+    when: ansible_os_family == 'RedHat'
+
+  - name: nginx installation in Ubuntu
+    ansible.builtin.apt:
+    when: ansible_os_family == 'Debian'
+
+
+  
