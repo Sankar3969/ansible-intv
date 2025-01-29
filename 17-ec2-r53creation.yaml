@@ -1,5 +1,6 @@
 - name: This ec2 instance creation
   hosts: local
+  connection: local
   become: yes
   vars:
     zone: "sankardevops.shop"
