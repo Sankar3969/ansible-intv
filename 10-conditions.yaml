@@ -1,6 +1,6 @@
 - name: this isfor testing condition 
   hosts: web
-  vars:
+  vars_prompt:
   - name: my_number
     prompt: please enter the number
   tasks:
