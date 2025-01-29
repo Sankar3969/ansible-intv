@@ -4,3 +4,26 @@
   - name: default value check
     debug:
       msg: " {{course1 | default('Ansible')}} "
+  - name: the uppaer value
+    vars:
+      username: "Suresh Kumar"
+    debug:
+      msg: " {{ username | upper}} -- and -- {{ username | lower }} "
+  - name: min and maximum number
+    vars:
+      numbers: [3,7,7,98,12,8,8,8]
+    debug:
+      msg: "Uniq: {{ numbers | unique }} and max is: {{numbers | max}} min is: {{numbers | min}}"
+  - name: dict to items
+    vars:
+      tools:
+        ci: "jenkins"
+        auto: "terraform"
+      courses:
+      - {key: ansible, value: config mgmt}
+      - {key: terraform, value: auto}
+    debug:
+      msg: " The items:: {{tools | dict2items}} and {{tools | items2dict}}"
+      
+
+  
