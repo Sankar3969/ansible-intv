@@ -10,5 +10,5 @@
     prompt: please enter the trainer
   tasks:
   - name: print val from prompt
-    ansible.builtin.msg:
+    ansible.builtin.debug:
       msg: " the course is {{course}},{{duration}} and {{trainer}} " 
