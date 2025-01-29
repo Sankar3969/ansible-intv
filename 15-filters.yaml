@@ -1,0 +1,6 @@
+- name: Filters and fnctions
+  hosts: web
+  tasks:
+  - name: default value check
+    debug:
+      msg: " course | default('Ansible')"
