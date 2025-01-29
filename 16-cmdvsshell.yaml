@@ -1,0 +1,15 @@
+- name: command and shell
+  hosts: web
+  tasks:
+  - name: command practice
+    ansible.builtin.command: df -hT 
+    register: memusage
+  - name: the memusage message 
+    debug: 
+      msg: " {{memusage}} "
+  - name: the shell cmd usgae
+    ansible.builtin.shell: ps -ef | grep ssh
+    register: pid
+  - name: the memusage message 
+    debug: 
+      msg: " {{pid}} "
