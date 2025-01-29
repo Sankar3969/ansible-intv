@@ -16,4 +16,4 @@
   - name: the loop for map
     debug:
       msg: "{{item.key}} ---- {{item.value}}"
-    loop: {{tools | dict2items}}
+    loop: "{{tools | dict2items}}"
