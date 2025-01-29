@@ -23,7 +23,7 @@
       instance_type: "t3.micro"
       security_group: "allow-ssh"
       image_id: {{image_id}}
-    loop: {{instances}}
+    loop: "{{instances}}"
     register: ec2_instance
 
   - name: creating the route 53 for mysql and backend
