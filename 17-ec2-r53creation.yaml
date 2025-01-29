@@ -29,27 +29,27 @@
   - name: creating the route 53 for mysql and backend
     amazon.aws.route53:
       state: present
-      zone: {{zone}}
-      record: {{item.item}}.{{zone}}
+      zone: "{{zone}}"
+      record: "{{item.item}}.{{zone}}"
       type: A
       ttl: 1
       value: "{{item.instances[0].private_ip_address}}"
       wait: true
       overwrite: true
-    loop: {{ec2_instance.results}}
-    when: {{item.item}} != "frontend"
+    loop: "{{ec2_instance.results}}"
+    when: "{{item.item}}" != "frontend"
 
     - name: creating the route 53 for frontend
     amazon.aws.route53:
       state: present
-      zone: {{zone}}
-      record: {{item.item}}.{{zone}}
+      zone: "{{zone}}"
+      record: "{{item.item}}.{{zone}}"
       type: A
       ttl: 1
       value: "{{item.instances[0].private_ip_address}}"
       wait: true
       overwrite: true
-    loop: {{ec2_instance.results}}
-    when: {{item.item}} == "frontend"
+    loop: "{{ec2_instance.results}}"
+    when: "{{item.item}}" == "frontend"
     
 
