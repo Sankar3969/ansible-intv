@@ -1,0 +1,10 @@
+- name: Id checking
+  hosts: web
+  tasks:
+  - name: id existence check
+    ansible.builtin.command: id expense
+    register: userid
+    ignore_error: true
+  - name: user id creation
+    ansible.builtin.command: useradd expense
+    when: userid.rc !=0
