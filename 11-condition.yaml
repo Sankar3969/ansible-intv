@@ -1,5 +1,6 @@
 - name: Id checking
   hosts: web
+  become: yes
   tasks:
   - name: id existence check
     ansible.builtin.command: id expense
