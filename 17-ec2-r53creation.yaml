@@ -12,8 +12,9 @@
   tasks:
   - name: installation boto 3 and botocore 
     ansible.builtin.pip:
-      - boto3
-      - botocore
+      name:
+       - boto3
+       - botocore
       executable: pip3.9
   - name: start an instance with a public IP address
     amazon.aws.ec2_instance:
