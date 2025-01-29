@@ -3,4 +3,4 @@
   tasks:
   - name: default value check
     debug:
-      msg: " {{course }} | default('Ansible')"
+      msg: " {{course1 }} | default('Ansible')"
