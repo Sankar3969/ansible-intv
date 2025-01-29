@@ -1,5 +1,10 @@
 - name: loops with lists and disctionary
   hosts: web
+  vars:
+    tools:
+      ci: "jenkins"
+      auto: "terraform"
+
   tasks:
   - name: the loops iteration
     debug:
@@ -7,3 +12,7 @@
     loop: 
       - {name: "name1", group: "root1" }
       - {name: "name2", group: "root2" }
+  - name: the loop for map
+    debug:
+      msg: "{{item.key}} ---- {{item.value}}"
+    loop: {{ tools }}
