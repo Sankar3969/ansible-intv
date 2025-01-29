@@ -14,7 +14,7 @@
     ansible.builtin.pip:
       - boto3
       - botocore
-      executable: pip-3.9
+      executable: pip3.9
   - name: start an instance with a public IP address
     amazon.aws.ec2_instance:
       name: {{items}}
