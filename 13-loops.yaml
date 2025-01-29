@@ -1,12 +1,22 @@
 - name: loops example
   hosts: web
-  tasks: 
-  - name: the loop example 
-    ansible.builtin.debug:
-      msg: "the items {{item}}"
-    loop:
+  vars:
+    courses:
       - ansi1
       - ansi2
       - ansi3
       - ansi4
       - ansi6
+
+  tasks: 
+  - name: the loop example 
+    ansible.builtin.debug:
+      msg: "the items {{item}}"
+    loop:
+      courses
+    # loop:
+    #   - ansi1
+    #   - ansi2
+    #   - ansi3
+    #   - ansi4
+    #   - ansi6
