@@ -1,0 +1,26 @@
+- name: data types
+  hosts: local
+  vars:
+    course: "from devops"
+    duration: 120
+    topics:
+    - shell
+    - ansible
+    - terraform
+    - docker
+    tools:
+      ci: jenkins
+      automation: terraform
+      terraform:
+        - module
+        - provisionars
+        - locals
+  tasks:
+  - name: print the strings
+    ansible.builtin.debug:
+      msg: " the course {{course}} and {{duration}}"
+  - name: print the topics
+    ansible.builtin.debug:
+      msg: " the topics {{topics}} and {{tools}}"
+
+  
