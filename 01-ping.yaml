@@ -1,0 +1,5 @@
+- name: ping the node
+  host:
+  tasks:
+  - name: ping the ansi node
+    ansible.builtin.ping:
