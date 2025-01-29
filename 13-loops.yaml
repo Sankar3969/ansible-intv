@@ -12,8 +12,7 @@
   - name: the loop example 
     ansible.builtin.debug:
       msg: "the items {{item}}"
-    loop:
-      - courses
+    loop: "{{courses}}"
     # loop:
     #   - ansi1
     #   - ansi2
