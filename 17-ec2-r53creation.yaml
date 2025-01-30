@@ -1,29 +1,30 @@
-- name: This ec2 instance creation
-  hosts: local
+- name: This EC2 instance creation
+  hosts: localhost  # Fixed 'local' to 'localhost'
   connection: local
-  become: yes
   vars:
     zone: "sankardevops.shop"
     subnet_id: "subnet-0bb4042a52cfcf8f3"
     sg_id: "sg-05b0b0c9126c60beb"
     ami_id: "ami-09c813fb71547fc4f"
     instances:
-    - mysql
-    - backend
-    - frontend
+      - mysql
+      - backend
+      - frontend
   tasks:
-  - name: installation boto 3 and botocore 
-    ansible.builtin.pip:
-      name:
-        - boto3
-        - botocore
-      executable: pip3.9
-  - name: create ec2 instance
-    amazon.aws.ec2_instance:
-      name: "{{ item }}"
-      vpc_subnet_id: "{{ subnet_id }}"
-      instance_type: "t3.micro"
-      security_group: "{{ sg_id }}"
-      image_id: "{{ ami_id }}"
-    loop: "{{ instances }}"
-    register: ec2_instances
+    - name: Install boto3 and botocore
+      ansible.builtin.pip:
+        name:
+          - boto3
+          - botocore
+        executable: pip3.9
+
+    - name: Create EC2 instances
+      amazon.aws.ec2_instance:
+        name: "{{ item }}"
+        vpc_subnet_id: "{{ subnet_id }}"
+        instance_type: "t3.micro"
+        security_group_ids:  #  Corrected this parameter
+          - "{{ sg_id }}"
+        image_id: "{{ ami_id }}"
+      loop: "{{ instances }}"
+      register: ec2_instances  # Fixed typo
