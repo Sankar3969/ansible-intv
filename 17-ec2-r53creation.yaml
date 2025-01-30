@@ -8,9 +8,9 @@
     sg_id: "sg-05b0b0c9126c60beb"
     ami_id: "ami-09c813fb71547fc4f"
     instances:
-      - mysql
-      - backend
-      - frontend
+    - mysql
+    - backend
+    - frontend
   tasks:
   - name: installation boto 3 and botocore 
     ansible.builtin.pip:
