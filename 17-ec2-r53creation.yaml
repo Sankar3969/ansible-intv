@@ -25,6 +25,7 @@
       security_group: "sg-05b0b0c9126c60beb"
       image_id: "{{image_id}}"
       region: "us-east-1"
+      profile: ansible
     loop: "{{instances}}"
     register: ec2_instance
 
