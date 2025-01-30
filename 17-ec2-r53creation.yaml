@@ -22,7 +22,7 @@
       name: "{{item}}"
       vpc_subnet_id: "{{subnet_id}}"
       instance_type: "t3.micro"
-      security_group: "allow-ssh"
+      security_group: "sg-05b0b0c9126c60beb"
       image_id: "{{image_id}}"
       region: "us-east-1"
     loop: "{{instances}}"
